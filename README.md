@@ -6,6 +6,8 @@ This repository contains a solution to the Kaggle Competition - [Give Me Some Cr
 
 > Final model AUC score: **0.8739**
 
+**Deployed model is available at: https://credit-scoring-kaggle.onrender.com/**
+
 ## Exploratory Data Analysis
 
 We are given the data of 150.000 (for training) customers, where we have several columns:
@@ -53,6 +55,18 @@ Conclusion: there was statistical significance with p-value = 0.00, CatBoost mod
 Finally, I trained again CatBoost and made the final predictions. Resulting in an AUC Score of 0.8739.
 
 I used FastAPI to create a simple site, on which I can enter data to predict the probability of having the risk of delinquency.
+
+For deployment of the model, I used free available render.com:
+
+- Build command:
+```
+pip install fastapi[standard] numpy pandas matplotlib catboost scikit-learn uvicorn[standard]
+```
+
+- Start command:
+```
+uvicorn website.main:app --reload --host 0.0.0.0
+```
 
 *Author: Bulat Sharipov, Innopolis University*
 
