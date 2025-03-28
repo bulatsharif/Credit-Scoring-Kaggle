@@ -10,10 +10,10 @@ from sklearn.impute import SimpleImputer
 
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="website/templates")
 
 model = CatBoostClassifier()
-model.load_model("catboostmodel.cbm")
+model.load_model("website/catboostmodel.cbm")
 
 young_age = 40
 poor_income = 20000
